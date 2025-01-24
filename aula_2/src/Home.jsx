@@ -11,6 +11,7 @@ function Home() {
         <>
             <h4>Página Home</h4>
             <Link to="/about">About</Link>
+            <Link to="/contact">Contact</Link>
             <p>Valor total: {total}</p>
 
             <h2>{produto.produto} valor: ${produto.valor}</h2>
