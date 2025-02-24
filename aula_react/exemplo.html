@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="resultado">
+
+    </div>
+
+
+    <script>
+        const resultado = document.getElementById('resultado');
+
+        let data = [];
+
+        resultado.innerHTML = "Loading"
+
+        async function fetchAPI() {
+            const req = await fetch('https://api.mercadolibre.com/sites/MLB/search?q=computador');
+            const res = await req.json()
+
+            data = res.results;
+            resultado.innerHTML = data[0].title;
+        }
+
+        fetchAPI();
+    </script>
+</body>
+
+</html>
